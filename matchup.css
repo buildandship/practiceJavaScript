@@ -1,0 +1,40 @@
+.boxclass {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  background-color: white;
+  border-color: red;
+  border-style: solid;
+  float: left;
+  padding: 0 10px;
+}
+
+.boxColor {
+  color: blue;
+}
+
+/* .mystyle {
+  background-color: red;
+  border-color: red;
+} */
+
+.redClass {
+  background-color: red;
+}
+
+.greenClass {
+  background-color: green;
+}
+.blueClass {
+  background-color: blue;
+}
+.yellowClass {
+  background-color: yellow;
+}
+.default {
+  background-color: white;
+}
+
+.matchedBox {
+  pointer-events: none;
+}

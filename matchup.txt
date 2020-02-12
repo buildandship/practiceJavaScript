@@ -1,0 +1,25 @@
+Matching game 
+1. There is 3X3 matrix of boxes. 
+2. Initially all boxes should have white color.
+3. Each box is assigned color.
+4. 4 colors random assignment to 8 boxes. 1 Left unassigned. 
+5. On clicking box gets open up and then click other box 
+    if two color matches freeze them and not more operations on that
+    if two color doesn't match both should get flipped to back to white
+6. Reset button at top to reset the state of matrix
+7. If all 4 matches then display a message " Yay you did it"
+
+
+Guidelines
+1. OO Code for this
+2. Neat design 
+3. Separation of concern
+###############################################################################
+
+Box 
+properties: defaultColor, hiddenColor, open, close
+methods: flipBox(), hideBox(), checkForBoxMatch() boxMatch() boxmisMatch() getBoxColor()
+canflipBox()
+
+Code review and optimization
+Without css 
