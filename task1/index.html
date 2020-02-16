@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <title>Task 1</title>
+  </head>
+  <body>
+    <h1>Form 1</h1>
+    <div class="container">
+      <fieldset>
+        <form action="" onsubmit="submit()">
+          <legend>Personalia:</legend>
+          <label for="fname">First Name:</label>
+          <input type="text" name="fname" id="fname" /><br />
+          <label for="lname">Last Name:</label>
+          <input type="text" name="lname" id="lname" disabled /><br />
+
+          <label for="gender">Please select your gender:</label><br />
+          <input type="radio" id="male" name="gender" value="male" disabled />
+          <label for="male">Male</label><br />
+          <input
+            type="radio"
+            id="female"
+            name="gender"
+            value="female"
+            disabled
+          />
+          <label for="female">Female</label><br />
+          <input type="radio" id="other" name="gender" value="other" disabled />
+          <label for="other">Other</label><br /><br />
+
+          <label for="dob">Enter DoB:</label>
+          <input
+            type="date"
+            id="dob"
+            required
+            placeholder="Enter date"
+            disabled
+          />
+          <br />
+          <label for="cars">Choose a car:</label>
+          <select id="cars" name="cars" disabled>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+          </select>
+          <br /><br />
+          <label for="details">Enter Details</label>
+          <textarea disabled> </textarea>
+          <button id="btn" disabled onclick="onSubmit()">
+            Submit
+          </button>
+        </form>
+      </fieldset>
+    </div>
+    <div id="msgID"></div>
+  </body>
+  <script src="main.js"></script>
+</html>

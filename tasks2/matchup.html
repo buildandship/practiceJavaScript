@@ -7,9 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="matchup.css" />
   </head>
-  <body onload="createDiv()">
+  <body>
     <div id="container">
       <h1>Match up Game</h1>
+      Enter Boxes: <input type="text" name="boxesCount" id="boxesCount" />
+      <input type="submit" value="Submit" onclick="createBoxes()" />
+
       <div id="boxContainer"></div>
     </div>
     <div id="endmsg"></div>

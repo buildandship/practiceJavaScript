@@ -2,7 +2,7 @@
   width: 50px;
   height: 50px;
   position: relative;
-  background-color: white;
+  /* background-color: white; */
   border-color: red;
   border-style: solid;
   float: left;
@@ -12,7 +12,7 @@
 .boxColor {
   color: blue;
 }
-
+/* 
 .redClass {
   background-color: red;
 }
@@ -26,10 +26,11 @@
 .yellowClass {
   background-color: yellow;
 }
-.default {
-  background-color: white;
-}
-
+ */
 .matchedBox {
   pointer-events: none;
+}
+
+.default {
+  background-color: white;
 }
