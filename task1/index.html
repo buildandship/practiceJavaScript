@@ -7,37 +7,26 @@
     <div class="container">
       <fieldset>
         <form action="" onsubmit="submit()">
+          <button>Start</button>
           <legend>Personalia:</legend>
           <label for="fname">First Name:</label>
           <input type="text" name="fname" id="fname" /><br />
           <label for="lname">Last Name:</label>
-          <input type="text" name="lname" id="lname" disabled /><br />
+          <input type="text" name="lname" id="lname" /><br />
 
           <label for="gender">Please select your gender:</label><br />
-          <input type="radio" id="male" name="gender" value="male" disabled />
+          <input type="radio" id="male" name="gender" value="male" />
           <label for="male">Male</label><br />
-          <input
-            type="radio"
-            id="female"
-            name="gender"
-            value="female"
-            disabled
-          />
+          <input type="radio" id="female" name="gender" value="female" />
           <label for="female">Female</label><br />
-          <input type="radio" id="other" name="gender" value="other" disabled />
+          <input type="radio" id="other" name="gender" value="other" />
           <label for="other">Other</label><br /><br />
 
           <label for="dob">Enter DoB:</label>
-          <input
-            type="date"
-            id="dob"
-            required
-            placeholder="Enter date"
-            disabled
-          />
+          <input type="date" id="dob" required placeholder="Enter date" />
           <br />
           <label for="cars">Choose a car:</label>
-          <select id="cars" name="cars" disabled>
+          <select id="cars" name="cars">
             <option value="volvo">Volvo</option>
             <option value="saab">Saab</option>
             <option value="fiat">Fiat</option>
@@ -45,8 +34,8 @@
           </select>
           <br /><br />
           <label for="details">Enter Details</label>
-          <textarea disabled> </textarea>
-          <button id="btn" disabled onclick="onSubmit()">
+          <textarea> </textarea>
+          <button id="btn" onclick="onSubmit()" type="submit">
             Submit
           </button>
         </form>
