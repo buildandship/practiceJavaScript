@@ -2,7 +2,7 @@
 
 ## Basics requirement for ReactJs 
 ---
-- [ ] Reursion
+- [ ] Recursion
 - [ ] Closure
 - [ ] Loops
 - [ ] Conditionals
