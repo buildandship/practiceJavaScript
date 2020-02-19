@@ -40,6 +40,9 @@ class UI {
     var inputs = Array.from(document.getElementsByTagName('input'));
     inputs.forEach((el) => {
       el.setAttribute('disabled', 'disabled');
+      el.addEventListener('keyup', (e) => {
+        console.log(e);
+      });
     });
 
     // disable select box
