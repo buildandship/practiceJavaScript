@@ -1,3 +1,75 @@
+//
+document.addEventListener('DOMContentLoaded', () => {
+    createList('left');
+    createBtn('add', 'left');
+    createBtn('remove', 'right');
+    createList('right');
+});
+
+createList = (side) => {
+    const list = document.querySelector('.' + side);
+    list.style.float = side;
+    const listSelect = document.createElement('select');
+    listSelect.id = side + 'list';
+    listSelect.name = side + 'list';
+    listSelect.multiple = 'multiple';
+    listSelect.style.width = '300px';
+    listSelect.style.height = '200px';
+    if (side === 'left') {
+        fillCountries(listSelect);
+    }
+    list.appendChild(listSelect);
+}
+
+createBtn = (btn, side) => {
+    const list = document.querySelector('.' + side);
+    const b = document.createElement('button');
+    b.id = btn;
+    b.name = btn;
+    b.innerText = btn;
+    b.addEventListener('click', moveCountry);
+    list.append(b);
+}
+
+fillCountries = (leftselect) => {
+    for (let i = 0; i < countryList.length; i++) {
+        let option = document.createElement('option');
+        option.value = i;
+        option.text = countryList[i];
+        leftselect.appendChild(option);
+    }
+}
+// TODO make it generic
+moveCountry = (e) => {
+    if (event.target.id === 'add') {
+        let leftlist = document.getElementById('leftlist');
+        let selectedCountries = Array.from(leftlist.selectedOptions);
+        if (Array.isArray(selectedCountries) && selectedCountries.length) {
+            selectedCountries.forEach(country => {
+                // Add to right list
+                rightlist.appendChild(country);
+                // Remove from left list
+                leftlist.remove(country);
+            });
+        } else {
+            alert('Please Select Country to be added!!!');
+        }
+    } else if (event.target.id === 'remove') {
+        let rightlist = document.getElementById('rightlist');
+        let selectedCountries = Array.from(rightlist.selectedOptions);
+        if (Array.isArray(selectedCountries) && selectedCountries.length) {
+            selectedCountries.forEach(country => {
+                // Add to left list 
+                leftlist.appendChild(country);
+                // Remove from right list
+                rightlist.remove(country);
+            });
+        } else {
+            alert('Please Select Country to be Removed!!!');
+        }
+    }
+};
+
 // List of all countries in a simple list / array.
 const countryList = [
     "Afghanistan",
@@ -250,81 +322,3 @@ const countryList = [
     "Zimbabwe",
     "Åland Islands"
 ];
-
-//
-document.addEventListener('DOMContentLoaded', () => {
-
-    const left = document.querySelector('.left');
-    left.style.float = 'left';
-
-    const leftselect = document.createElement('select');
-    leftselect.id = 'leftlist';
-    leftselect.name = 'leftlist';
-    leftselect.multiple = 'multiple';
-    leftselect.style.width = '300px';
-    leftselect.style.height = '200px';
-    for (let i = 0; i < countryList.length; i++) {
-        let option = document.createElement('option');
-        option.value = i;
-        option.text = countryList[i];
-        //leftselect.add(option);
-        leftselect.appendChild(option);
-    }
-    left.appendChild(leftselect);
-    const addBtn = document.createElement('button');
-    addBtn.id = 'add';
-    addBtn.name = 'add';
-    addBtn.innerText = 'Add >>';
-    // TODO: For multiple select
-    addBtn.addEventListener('click', (e) => {
-        //console.log(e.target);
-        let leftlist = document.getElementById('leftlist');
-        console.log(leftlist.selectedIndex);
-        if (leftlist.selectedIndex != -1) {
-            // Add to right list
-            let option = document.createElement('option');
-            option.value = leftlist.options[leftlist.selectedIndex].value;
-            option.text = leftlist.options[leftlist.selectedIndex].text;
-            //rightselect.add(option);
-            rightselect.appendChild(option);
-            // Remove from left list
-            leftlist.remove(leftlist.selectedIndex);
-        } else {
-            alert('Please Select Country to be added!!!');
-        }
-    });
-    left.appendChild(addBtn);
-
-    const right = document.querySelector('.right');
-    right.style.float = 'right';
-    const removeBtn = document.createElement('button');
-    removeBtn.id = 'remove';
-    removeBtn.name = 'remove';
-    removeBtn.innerText = '<<Remove';
-    // TODO: For multiple select
-    removeBtn.addEventListener('click', (e) => {
-        //console.log(e.target);
-        let rightlist = document.getElementById('rightlist');
-        console.log(rightlist.selectedIndex);
-        if (rightlist.selectedIndex != -1) {
-            // Add to left list 
-            let option = document.createElement('option');
-            option.value = rightlist.options[rightlist.selectedIndex].value;
-            option.text = rightlist.options[rightlist.selectedIndex].text;
-            leftselect.appendChild(option);
-            // Remove from right list
-            rightlist.remove(rightlist.selectedIndex);
-        } else {
-            alert('Please Select Country to be Removed!!!');
-        }
-    });
-    right.appendChild(removeBtn);
-
-    const rightselect = document.createElement('select');
-    rightselect.id = 'rightlist';
-    rightselect.name = 'rightlist';
-    rightselect.multiple = 'multiple';
-    rightselect.style.width = '300px';
-    rightselect.style.height = '200px';
-    right.appendChild(rightselect);
-});
