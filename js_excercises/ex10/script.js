@@ -37,3 +37,4 @@ getSubDomain = (hostname) => {
     subdomains.push(hostname.replace(urlParts[0], '').slice(0, -1));
     return subdomains;
 }
+// work on few excerices of regex

@@ -41,34 +41,30 @@ fillCountries = (leftselect) => {
 }
 // TODO make it generic
 moveCountry = (e) => {
+    let list;
+    let otherList;
     if (event.target.id === 'add') {
-        let leftlist = document.getElementById('leftlist');
-        let selectedCountries = Array.from(leftlist.selectedOptions);
-        if (Array.isArray(selectedCountries) && selectedCountries.length) {
-            selectedCountries.forEach(country => {
-                // Add to right list
-                rightlist.appendChild(country);
-                // Remove from left list
-                leftlist.remove(country);
-            });
-        } else {
-            alert('Please Select Country to be added!!!');
-        }
+        list = document.getElementById('leftlist');
+        otherList = document.getElementById('rightlist');
     } else if (event.target.id === 'remove') {
-        let rightlist = document.getElementById('rightlist');
-        let selectedCountries = Array.from(rightlist.selectedOptions);
-        if (Array.isArray(selectedCountries) && selectedCountries.length) {
-            selectedCountries.forEach(country => {
-                // Add to left list 
-                leftlist.appendChild(country);
-                // Remove from right list
-                rightlist.remove(country);
-            });
-        } else {
-            alert('Please Select Country to be Removed!!!');
-        }
+        otherList = document.getElementById('leftlist');
+        list = document.getElementById('rightlist');
     }
+    addCountries(list, otherList);
 };
+
+// Refactoring using extract method on list
+addCountries = (list, otherlist) => {
+    let selectedCountries = Array.from(list.selectedOptions);
+    if (Array.isArray(selectedCountries) && selectedCountries.length) {
+        selectedCountries.forEach(country => {
+            // Add to other list
+            otherlist.appendChild(country);
+        });
+    } else {
+        alert('Please Select Country to be added/removed!!!');
+    }
+}
 
 // List of all countries in a simple list / array.
 const countryList = [
