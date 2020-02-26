@@ -3,6 +3,7 @@
 // For textarea it should check for empty and min length of 50 characters.
 // If any field is invalid then it should not submit the form. Also It should also confirm "receive notification"
 
+// TODO: refactored the code in functional style
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.querySelector('.container');
     console.log(container);

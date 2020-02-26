@@ -98,7 +98,7 @@ parentClick = (e) => {
         document.getElementById('child-' + key).style.display = 'none';
         let childboxes = document.getElementsByName(e.target.id);
         childboxes.forEach(b => {
-            b.checked = false;
+            //b.checked = false;
         });
 
     }
