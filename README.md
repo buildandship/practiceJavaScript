@@ -3,29 +3,30 @@
 ## Basics requirement for ReactJs 
 ---
 - [ ] Recursion
-- [ ] Closure
-- [ ] Loops
-- [ ] Conditionals
-- [ ] var let const
-- [ ] Working with events, event propagation & delegation, bubbling, capturing
+- [X] Closure
+- [X] Loops
+- [X] Conditionals
+- [X] var let const hoisting
+- [X] Call Apply Bind
+- [X] Working with events, event propagation & delegation, bubbling, capturing
 ---
-* [ ] AJAX
-* [ ] XHR
+* [X] AJAX
+* [X] XHR
 * [ ] Promises
 * [ ] ASYNC/AWAIT
-* [ ] Scope
-* [ ] Lexical Scope
+* [X] Scope
+* [X] Lexical Scope
 * [ ] ES6/ES7
-* [ ] Classes
+* [X] Classes
 * [ ] Imports/Exports
-* [ ] Arrow functions
-* [ ] Spread Operators
-* [ ] REST parameters
-* [ ] Functional Methods
+* [X] Arrow functions
+* [X] Spread Operators
+* [X] rest parameters
+* [X] Functional Methods
   * [ ] Map
   * [ ] Filter
   * [ ] Reduce
-* [ ] Destructing 
+* [X] Destructing 
 * [ ] Data structures
   * [ ] Arrays
   * [ ] Objects
@@ -33,7 +34,4 @@
   * [ ] Yarn
   * [ ] Web Pack
   * [ ] Babel
-
-
-
 ---
