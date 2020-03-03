@@ -1,0 +1,14 @@
+body {
+  margin: 20px;
+  padding: 30px;
+}
+
+.main-menu-links {
+  background-color: gray;
+  margin: 0;
+  padding: 0;
+}
+ul > li {
+  float: left;
+  text-decoration-line: none;
+}
